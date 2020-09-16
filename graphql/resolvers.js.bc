@@ -1,0 +1,37 @@
+import { getMovies, getById, addMovie, deleteMovie } from "./db";
+
+// graphqlをresolveするものが必要なので作成
+
+const resolvers = {
+  Query: {
+    movies: () => getMovies(),
+    movie: (_, { id }) => getById(id),
+  },
+
+  Mutation: {
+    addMovie: (_, { name, score }) => addMovie(name, score),
+    deleteMovie: (_, { id }) => deleteMovie(id),
+  },
+};
+
+// const resolvers = {
+//   Query: {
+//     person: () => kim,
+//   },
+// };
+
+// const resolvers = {
+//   Query: {
+//     name: function () {
+//       return kim;
+//     },
+//   },
+// };
+
+// const resolvers = {
+//     Query: {
+//       name: () => "kim",
+//     },
+//   };
+
+export default resolvers;
