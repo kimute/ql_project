@@ -30,3 +30,6 @@ API for movie with GraphQL
 ## 以下の api 使用
 
 https://yts.am/api/v2/list_movies.json
+
+https://yts.mx/api/v2/movie_details.jason?
+movie_id=21415
